@@ -7,7 +7,10 @@ import units as gc_units
 from translation import _
 from flox import Flox
 
-locale.setlocale(locale.LC_NUMERIC, "")
+try:
+    locale.setlocale(locale.LC_NUMERIC, "")
+except locale.Error:
+    locale.setlocale(locale.LC_NUMERIC, "C")
 
 
 # ---------------------------------------------------------------------------
